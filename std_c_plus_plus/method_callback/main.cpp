@@ -1,12 +1,11 @@
 //Implement a simple example ,used to inspect static callback method use with
-//class.
+//class. mainly to check how to access a class's member variable within a static
+//method.
 #include <iostream>
 
-typedef void (*fun_ptr)(int a);
+class CLS;
+typedef void (*fun_ptr)(CLS *cls);
 
-static void just_one_caller(fun_ptr callback_mtd) {
-  callback_mtd(10000);
-}
 
 class VP {
   public:
@@ -18,22 +17,35 @@ class VP {
 
 class CLS {
   public:
-  static void static_method(int a);
+  static void static_method(CLS *cls);
   void set_vp_value(int a) {vp_.set_inta(a);}
   int get_vp_a() { return vp_.get_inta();}
+  int be_access;
   private:  
   VP vp_;
 };
 
-void CLS::static_method(int a) {
+void CLS::static_method(CLS *cls) {
   std::cout <<"+++++++++++++++static_method++++++++++++++++++++++\n";
-  std::cout <<"a " << a << std::endl;
+  //could access CLS::vp_ ?
+  cls->be_access = 100;
+  std::cout <<"be_access = " << cls->be_access << std::endl;
+}
+
+void just_one_caller(CLS *cls) {
+  if (cls != NULL) {
+    cls->static_method(cls);  
+  }
 }
 
 int main() {
   CLS cls1;
   cls1.set_vp_value(10);
 
-  just_one_caller(cls1.static_method);
+  //worked very well
+  cls1.static_method(&cls1);
+
+  //use callback to inspect again, still worked expected
+  just_one_caller(&cls1);
   return 0;
 }
