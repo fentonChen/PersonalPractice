@@ -2,3 +2,4 @@
 thread : std::thread relative examples
 file_loop_include : the example about header file(.h) loop include, for test 
                     some may occured errors.
+method_callback: examples about callback method use

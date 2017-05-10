@@ -1,0 +1,3 @@
+//folders:
+private_pointer_transmit : the example to verify wether a private pointer could
+                           be transmited to another pointer?
