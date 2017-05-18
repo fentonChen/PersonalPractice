@@ -1,0 +1,4 @@
+folders:
+smtp : simplest mail sender implemented by python . reference to 'runboo web'
+       ,to running the example, you need a local sendmail server, make sure you've
+      already set up it in you company.
