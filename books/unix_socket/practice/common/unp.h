@@ -14,4 +14,8 @@
 /* Miscellaneous constants */
 #define	MAXLINE		4096	/* max text line length */
 
+/* Following could be derived from SOMAXCONN in <sys/socket.h>, but many
+   kernels still #define it as 5, while actually supporting many more */
+#define	LISTENQ		1024	/* 2nd argument to listen() */
+
 #endif
