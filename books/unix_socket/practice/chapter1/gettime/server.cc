@@ -3,7 +3,7 @@
 
 #include "unp.h"
 
-int main(int agrc, char **agrv) {
+int main(int agrc, char **argv) {
   int    listenfd, connfd;
   struct sockaddr_in servaddr;
   char   buff[MAXLINE];
