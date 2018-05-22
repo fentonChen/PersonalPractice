@@ -1,4 +1,5 @@
 //regex example of findout domain area and replace it to an IP address
+//in case of regex_replace error, the rebuild_str will be same with exm_url
 #include <regex>
 #include <string>
 #include <iostream>
