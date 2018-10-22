@@ -6,16 +6,16 @@
 #include <stdlib.h>
 
 
-void func(std::array<std::string, 2> &array) {
-    char * exa = "woshishui";
-    char * exa2  = "nishishui";
+void func(std::string *array) {
+    char exa[51] = {"aawoshishui"};
+    char exa2[51]  = {"aanishishui"};
 
     array[0] = exa;
     array[1] = exa2;
 }
 
 int main() {
-    std::array<std::string, 2> array;
+    std::string array[2];
     func(array);
     for (int i=0; i<2; i++) {
         std::cout <<" " << array[i] << std::endl;
