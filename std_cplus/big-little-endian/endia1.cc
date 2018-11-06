@@ -18,8 +18,8 @@ kt;
 
 int main() {
     //origin-data : 126 == 0x7E -- 0111 1110
-    //big-endian-storage  : 0xF 0x1 0x2 == 15 1 2
-    //little-endian-storage : 0x1E 0x1 0x1 == 30 1 1
+    //big-endian-storage  : 0xF 0x1 0x2 == 15 1 2     big endian in front
+    //little-endian-storage : 0x1E 0x1 0x1 == 30 1 1  little endian in front
     char result = 126;
     memcpy(&kt, &result, 1);
     printf(" blockcount=%d, padding=%d, version=%d,ok\n", 

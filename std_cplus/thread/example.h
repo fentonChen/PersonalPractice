@@ -16,5 +16,6 @@ class ThreadExample {
     ~ThreadExample();
   private:
     void ThreadCallback();
-    std::unique_ptr<std::thread> thread_{nullptr};  
+    //std::unique_ptr<std::thread> thread_{nullptr};  
+    std::thread thread_(&ThreadExample::ThreadCallback, this);  
 };
